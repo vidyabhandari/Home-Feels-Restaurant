@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Francois+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* @theme {
+  --font-PlayFair: "PlayFair Display", sans-serif;
+  --font-DMSans: "DM Sans", sans-serif;
+  --font-Francois: "Francois One", sans-serif;
+} */
+
+a.active hr {
+  display: flex;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  a.active {
+    background-color: black;
+    color: white;
+  }
+}
+
+.title {
+  font-size: 2.25rem; /* text-4xl */
+  line-height: 3.5rem; /* leading-14 */
+  text-align: center;
+  font-family: "PlayFair", serif; /* font-PlayFair */
+  font-weight: 500; /* font-medium */
+}
+
+.main-container {
+  padding-inline: 12px;
+}
+
+@media (min-width: 640px) {
+  .main-container {
+    padding-inline: 5vw;
+  }
+}
+
+/* Media query for md breakpoint */
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.75rem; /* md:text-6xl */
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-container {
+    padding-inline: 9vw;
+  }
+}
+.light-section {
+  background-color: #f9f9f7;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

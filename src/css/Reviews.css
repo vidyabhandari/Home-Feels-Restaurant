@@ -1,0 +1,46 @@
+/* Reviews.css */
+.reviews-container {
+  padding-top: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Media Queries */
+@media screen and (min-width: 640px) {
+  .reviews-container {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .reviews-container {
+    padding-top: 1.5rem;
+  }
+  
+  .reviews-grid {
+    grid-template-columns: 1fr 1fr;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .reviews-container {
+    padding-top: 2rem;
+    padding-left: 9vw;
+    padding-right: 9vw;
+  }
+  
+  .reviews-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

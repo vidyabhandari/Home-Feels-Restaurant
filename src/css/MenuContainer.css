@@ -1,0 +1,111 @@
+/* Base container styling */
+.menu-container {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+@media (min-width: 640px) {
+  .menu-container {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-container {
+    padding-left: 9vw;
+    padding-right: 9vw;
+  }
+}
+
+/* Header section styling */
+.menu-header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 32px;
+}
+
+.header-description {
+  max-width: 600px;
+  text-align: center;
+  color: #4b5563; /* text-gray-600 */
+}
+
+/* Category buttons container */
+.category-buttons {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  width: 100%;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .category-buttons {
+    width: auto;
+  }
+}
+
+/* Button styling */
+.category-button {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
+  transition-property: background-color, color;
+  transition-duration: 300ms;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.category-button:hover {
+  background-color: #15803d; /* hover:bg-green-700 */
+  color: white;
+}
+
+.category-button.active {
+  background-color: #15803d; /* bg-green-700 */
+  color: white;
+}
+
+/* Product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  padding-top: 32px;
+  padding-bottom: 32px;
+  gap: 40px;
+}
+
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
