@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import axios from "axios";
 import Footer from "../components/Footer";
 import Title from "../components/Title";
-import "../styles/ContactContainer.css"; // Import the CSS file
+import "../css/ContactContainer.css"; // Import the CSS file
 
 const ContactContainer = () => {
   const [email, setEmail] = useState("");

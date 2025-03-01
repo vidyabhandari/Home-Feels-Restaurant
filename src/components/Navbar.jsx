@@ -1,10 +1,11 @@
 import { Link, NavLink, useNavigate } from "react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import menu_icon from "../assets/menu_icon.png";
 import dropdown_icon from "../assets/dropdown_icon.png";
 import logo from "../assets/restaurant.png";
 import { assets } from "../assets/assets";
 import "../css/Navbar.css";
+import cartIcon from "../assets/cart.png";
 
 const Navbar = () => {
   const [navActive, setNavActive] = useState(false);
@@ -15,7 +16,12 @@ const Navbar = () => {
   const handleNavbar = () => {
     setNavActive(!navActive);
   };
-  
+
+  useEffect(() => {
+    const loginToken = JSON.parse(localStorage.getItem("token"));
+    setToken(loginToken);
+  }, []);
+
   return (
     <>
       <div className="navbar-main">
@@ -24,9 +30,7 @@ const Navbar = () => {
             <div className="logo-wrapper">
               <img src={logo} alt="" className="logo-image" />
               <div className="logo-text-container">
-                <p className="logo-text">
-                  HOME FEELS
-                </p>
+                <p className="logo-text">HOME FEELS</p>
               </div>
             </div>
           </NavLink>
@@ -55,6 +59,11 @@ const Navbar = () => {
           {token ? (
             <div className="profile-dropdown">
               <img
+                onClick={() => navigate("/cart")}
+                src={cartIcon}
+                className="cart-icon"
+              />
+              <img
                 onClick={() => navigate("/profile")}
                 src={assets.profile_icon}
                 alt="Profile"
@@ -82,10 +91,7 @@ const Navbar = () => {
               <Link to="/login" className="login-link">
                 Login
               </Link>
-              <Link
-                to="/signup"
-                className="signup-button"
-              >
+              <Link to="/signup" className="signup-button">
                 Signup
               </Link>
             </div>
@@ -104,10 +110,7 @@ const Navbar = () => {
       <div>
         {navActive && (
           <div className="mobile-menu">
-            <div
-              className="mobile-menu-header"
-              onClick={handleNavbar}
-            >
+            <div className="mobile-menu-header" onClick={handleNavbar}>
               <img src={dropdown_icon} alt="Close" className="back-icon" />
               <p className="back-text">Back</p>
             </div>

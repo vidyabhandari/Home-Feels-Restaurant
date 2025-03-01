@@ -1,7 +1,7 @@
 import Footer from "../components/Footer";
 import Title from "../components/Title";
 import map from "../assets/map.png";
-import '../css/BookTableContainer.css'
+import "../css/BookTableContainer.css";
 
 const BookTableContainer = () => {
   return (
@@ -16,7 +16,6 @@ const BookTableContainer = () => {
           </p>
         </div>
       </div>
-
       {/* Form and Contact Info Section */}
       <div className="map-container">
         <img src={map} alt="" className="map-image" />
@@ -29,22 +28,13 @@ const BookTableContainer = () => {
               <label htmlFor="date" className="form-label">
                 Date <span className="required">*</span>
               </label>
-              <input
-                type="date"
-                id="date"
-                className="form-input"
-                required
-              />
+              <input type="date" id="date" className="form-input" required />
             </div>
             <div className="form-group">
               <label className="form-label">
                 Time <span className="required">*</span>
               </label>
-              <input
-                type="time"
-                placeholder="Time"
-                className="form-input"
-              />
+              <input type="time" placeholder="Time" className="form-input" />
             </div>
           </div>
           <div className="form-row">
@@ -52,11 +42,7 @@ const BookTableContainer = () => {
               <label className="form-label">
                 Name <span className="required">*</span>
               </label>
-              <input
-                type="text"
-                placeholder="Name"
-                className="form-input"
-              />
+              <input type="text" placeholder="Name" className="form-input" />
             </div>
             <div className="form-group">
               <label className="form-label">
@@ -73,11 +59,7 @@ const BookTableContainer = () => {
             <label htmlFor="persons" className="form-label">
               Total Persons <span className="required">*</span>
             </label>
-            <select
-              id="persons"
-              className="form-select"
-              required
-            >
+            <select id="persons" className="form-select" required>
               <option value="">Select number of persons</option>
               {[...Array(10)].map((_, i) => (
                 <option key={i} value={i + 1}>
@@ -87,10 +69,7 @@ const BookTableContainer = () => {
             </select>
           </div>
           <div className="btn-container">
-            <button
-              type="submit"
-              className="submit-button"
-            >
+            <button type="submit" className="submit-button">
               Book a Table
             </button>
           </div>

@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import Title from "../components/Title";
-import "../css/SignupContainer.css"
+import "../css/SignupContainer.css";
 
 const SignupContainer = () => {
   const [name, setName] = useState("");
@@ -44,7 +44,7 @@ const SignupContainer = () => {
           Enter your credentials to create your account.
         </p>
 
-        <form className="signup-container-form">
+        <form className="signup-container-form" onSubmit={handleSubmit}>
           <div className="signup-container-input-group">
             <label className="signup-container-label">Name</label>
             <input
@@ -80,9 +80,7 @@ const SignupContainer = () => {
             />
           </div>
           <div className="signup-container-input-group">
-            <label className="signup-container-label">
-              Confrim Password
-            </label>
+            <label className="signup-container-label">Confrim Password</label>
             <input
               type="password"
               placeholder="Re-enter your password"
@@ -93,10 +91,7 @@ const SignupContainer = () => {
             />
           </div>
 
-          <button
-            type="submit"
-            className="signup-container-button"
-          >
+          <button type="submit" className="signup-container-button">
             Signup
           </button>
         </form>

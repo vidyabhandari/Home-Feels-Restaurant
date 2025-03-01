@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import Title from "../components/Title";
-import "../css/LoginContainer.css"
+import "../css/LoginContainer.css";
 
 const LoginContainer = () => {
   const [email, setEmail] = useState("");
@@ -44,7 +44,7 @@ const LoginContainer = () => {
           Enter your credentials to access your account.
         </p>
 
-        <form className="login-container-form">
+        <form className="login-container-form" onSubmit={handleSubmit}>
           <div className="login-container-input-group">
             <label className="login-container-label">Email</label>
             <input
@@ -77,10 +77,7 @@ const LoginContainer = () => {
             </div>
           </div>
 
-          <button
-            type="submit"
-            className="login-container-button"
-          >
+          <button type="submit" className="login-container-button">
             Login
           </button>
         </form>

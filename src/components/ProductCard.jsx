@@ -1,75 +1,41 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import "../css/ProductCard.css"; // Import the CSS file
 import add from "../assets/add.png";
 import remove from "../assets/remove.png";
 import { StoreContext } from "../context/StoreContext";
 
-const ProductCard = ({ product, onAddToCart }) => {
+const ProductCard = ({ product }) => {
   const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
 
-  const [quantity, setQuantity] = useState(1);
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
-
-  const increaseQuantity = () => {
-    setQuantity(quantity + 1);
-  };
-
-  const handleAddToCart = () => {
-    if (onAddToCart) {
-      onAddToCart({
-        ...product,
-        quantity: quantity
-      });
-    }
-  };
   return (
-    <div className="product-card">
-      {/* Image Section */}
-      <div className="image-container">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="product-image"
-        />
-      </div>
-
-      {/* Product Info */}
-      <div className="product-info">
-        <div className="product-details">
-          <p className="product-name">{product.name}</p>
-          <p className="product-price">${product.price}</p>
-        </div>
-        
-        {/* Cart Controls */}
-        <div className="cart-controls">
-          <div className="quantity-controls">
-            <button 
-              className="quantity-btn" 
-              onClick={decreaseQuantity}
-              disabled={quantity <= 1}
-            >
-              -
-            </button>
-            <span className="quantity-display">{quantity}</span>
-            <button 
-              className="quantity-btn" 
-              onClick={increaseQuantity}
-            >
-              +
-            </button>
+    <div className="food-item">
+      <div className="food-item-img-container">
+        <img className="food-item-image" src={product.image} alt="" />
+        {!cartItems?.[product.id] ? (
+          <img
+            className="add"
+            onClick={() => addToCart(product.id)}
+            src={add}
+            alt=""
+          />
+        ) : (
+          <div className="food-item-counter">
+            <img
+              onClick={() => removeFromCart(product.id)}
+              src={remove}
+              alt=""
+            />
+            <p>{cartItems[product.id]}</p>
+            <img onClick={() => addToCart(product.id)} src={add} alt="" />
           </div>
-          <button 
-            className="add-to-cart-btn"
-            onClick={handleAddToCart}
-          >
-            Add
-          </button>
+        )}
+      </div>
+      <div className="food-item-info">
+        <div className="food-item-name">
+          <p>{product.name}</p>
         </div>
+        <p className="food-item-description">{product.description}</p>
+        <p className="food-item-price">{product.price}</p>
       </div>
     </div>
   );
