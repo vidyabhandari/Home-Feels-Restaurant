@@ -1,26 +1,28 @@
 import { Link, NavLink, useNavigate } from "react-router";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import menu_icon from "../assets/menu_icon.png";
 import dropdown_icon from "../assets/dropdown_icon.png";
 import logo from "../assets/restaurant.png";
 import { assets } from "../assets/assets";
 import "../css/Navbar.css";
 import cartIcon from "../assets/cart.png";
+import { StoreContext } from "../context/StoreContext";
 
 const Navbar = () => {
+  const { token, setToken } = useContext(StoreContext);
   const [navActive, setNavActive] = useState(false);
-  const [token, setToken] = useState("");
-
   const navigate = useNavigate();
 
   const handleNavbar = () => {
     setNavActive(!navActive);
   };
 
-  useEffect(() => {
-    const loginToken = JSON.parse(localStorage.getItem("token"));
-    setToken(loginToken);
-  }, []);
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setToken("");
+    navigate("/");
+    alert("Logout Successfull");
+  };
 
   return (
     <>
@@ -78,8 +80,8 @@ const Navbar = () => {
                     Orders
                   </Link>
                   <p
-                    className="dropdown-item logout-button"
-                    onClick={() => setToken("")}
+                    className="dropdown-item-logout-button"
+                    onClick={handleLogout}
                   >
                     Logout
                   </p>

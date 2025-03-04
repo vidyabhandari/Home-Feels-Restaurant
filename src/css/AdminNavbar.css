@@ -1,0 +1,45 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4%;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Restaurant Logo */
+.restaurant-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.restuarnat-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Admin Section */
+.admin-section {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between image and text */
+}
+
+.admin-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.admin-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}

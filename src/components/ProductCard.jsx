@@ -11,10 +11,28 @@ const ProductCard = ({ product }) => {
     <div className="food-item">
       <div className="food-item-img-container">
         <img className="food-item-image" src={product.image} alt="" />
-        {!cartItems?.[product.id] ? (
+        {!cartItems[product._id] ? (
           <img
             className="add"
-            onClick={() => addToCart(product.id)}
+            onClick={() => addToCart(product._id)}
+            src={add}
+            alt=""
+          />
+        ) : (
+          <div className="food-item-counter">
+            <img
+              onClick={() => removeFromCart(product._id)}
+              src={remove}
+              alt=""
+            />
+            <p>{cartItems[product._id]}</p>
+            <img onClick={() => addToCart(product._id)} src={add} alt="" />
+          </div>
+        )}
+        {/* {!cartItems?.[product.id] ? (
+          <img
+            className="add"
+            // onClick={() => addToCart(product.id)}
             src={add}
             alt=""
           />
@@ -28,7 +46,7 @@ const ProductCard = ({ product }) => {
             <p>{cartItems[product.id]}</p>
             <img onClick={() => addToCart(product.id)} src={add} alt="" />
           </div>
-        )}
+        )} */}
       </div>
       <div className="food-item-info">
         <div className="food-item-name">

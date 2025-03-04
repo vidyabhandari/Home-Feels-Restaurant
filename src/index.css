@@ -7,11 +7,16 @@ html {
   scroll-behavior: smooth;
 }
 
-/* @theme {
-  --font-PlayFair: "PlayFair Display", sans-serif;
-  --font-DMSans: "DM Sans", sans-serif;
-  --font-Francois: "Francois One", sans-serif;
-} */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: PlayfairDisplay;
+}
+
+body{
+  min-height: 100vh;
+}
 
 a.active hr {
   display: flex;

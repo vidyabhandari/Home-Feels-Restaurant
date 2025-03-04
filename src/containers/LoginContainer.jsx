@@ -1,35 +1,76 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
+import { FiEye, FiEyeOff } from "react-icons/fi"; // Importing eye icons
 import Title from "../components/Title";
 import "../css/LoginContainer.css";
+import { StoreContext } from "../context/StoreContext";
 
 const LoginContainer = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
+  const [errors, setErrors] = useState({ email: "", password: "" }); // Error states
+
   const navigate = useNavigate();
+  const { setToken } = useContext(StoreContext);
+
+  // Email validation regex
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  // Password validation regex
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  const validateForm = () => {
+    let valid = true;
+    let errors = { email: "", password: "" };
+
+    if (!emailRegex.test(email)) {
+      errors.email = "Invalid email format (e.g. user@example.com)";
+      valid = false;
+    }
+
+    if (!passwordRegex.test(password)) {
+      errors.password =
+        "Password must be at least 8 characters and include an uppercase letter, lowercase letter, a number, and a special character.";
+      valid = false;
+    }
+
+    setErrors(errors);
+    return valid;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) return; // Stop submission if validation fails
+
     try {
-      const response = await axios.post(
-        "http://localhost:4000/api/user/login",
-        {
-          email,
-          password,
-        }
-      );
-
-      if (response.data && response.data.token) {
-        localStorage.setItem("token", JSON.stringify(response.data.token));
-        alert("Login Successful");
-        navigate("/");
+      if (email === "admin@gmail.com" && password === "admin") {
+        localStorage.setItem("Admin", email);
+        navigate("/admin-dashboard");
+        alert("Admin Login Successful!");
       } else {
-        alert("Invalid response from server");
-      }
+        const response = await axios.post(
+          "http://localhost:4000/api/user/login",
+          {
+            email,
+            password,
+          }
+        );
 
-      setEmail("");
-      setPassword("");
+        if (response.data && response.data.token) {
+          localStorage.setItem("token", JSON.stringify(response.data.token));
+          setToken(response.data.token);
+          alert("Login Successful");
+          navigate("/");
+        } else {
+          alert("Invalid response from server");
+        }
+
+        setEmail("");
+        setPassword("");
+      }
     } catch (error) {
       alert("Invalid credentials or server issue");
       console.log("Login Error:", error.response?.data || error.message);
@@ -55,24 +96,36 @@ const LoginContainer = () => {
               className="login-container-input"
               required
             />
+            {errors.email && <p className="error-message">{errors.email}</p>}
           </div>
 
           <div className="login-container-input-group">
             <label className="login-container-label">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
-              className="login-container-input"
-              required
-            />
+            <div className="password-input-wrapper">
+              <input
+                type={showPassword ? "text" : "password"} // Toggle input type
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter your password"
+                className="login-container-input"
+                required
+              />
+              <span
+                className="password-toggle-icon"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <FiEyeOff /> : <FiEye />}
+              </span>
+            </div>
+            {errors.password && (
+              <p className="error-message">{errors.password}</p>
+            )}
             <div className="login-container-forgot-password-wrapper">
               <Link
                 to="/forgot-password"
                 className="login-container-forgot-password-link"
               >
-                Forgot your password
+                Forgot your password?
               </Link>
             </div>
           </div>
@@ -83,7 +136,7 @@ const LoginContainer = () => {
         </form>
 
         <p className="login-container-signup-text">
-          Don&lsquo;t have an account?<span> </span>
+          Don’t have an account?<span> </span>
           <Link to="/signup" className="login-container-signup-link">
             Sign up
           </Link>

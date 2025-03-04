@@ -68,7 +68,9 @@
 
 /* Profile Dropdown Styles */
 .profile-dropdown {
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  gap:40px;
 }
 
 .cart-icon {
@@ -83,6 +85,9 @@
   cursor: pointer;
 }
 
+.dropdown-item-logout-button {
+  cursor: pointer;
+}
 .dropdown-menu {
   display: none;
   position: absolute;

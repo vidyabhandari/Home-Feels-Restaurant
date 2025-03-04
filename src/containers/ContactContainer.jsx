@@ -49,7 +49,7 @@ const ContactContainer = () => {
         {/* Form & Contact Info Section */}
         <div className="form-container">
           {/* Form Section */}
-          <form className="contact-form">
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
                 <label className="form-label">Name</label>

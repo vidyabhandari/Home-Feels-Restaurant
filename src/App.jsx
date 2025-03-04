@@ -10,7 +10,11 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import CartPageContainer from "./containers/CartPageContainer";
-
+import AdminDashboardPage from "./pages/AdminDashboardPage";
+import Add from "./pages/Add";
+import ListItems from "./pages/ListItems";
+import Orders from "./pages/Orders";
+import CartPage from "./pages/CartPage";
 // const AboutPage = lazy(() => import("./pages/AboutPage"));
 // const MenuPage = lazy(() => import("./pages/MenuPage"));
 // const ContactPage = lazy(() => import("./pages/ContactPage"));
@@ -37,7 +41,11 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-          <Route path="/cart" element={<CartPageContainer />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/admin-dashboard" element={<AdminDashboardPage />} />
+          <Route path="/add" element={<Add />} />
+          <Route path="/list" element={<ListItems />} />
+          <Route path="/orders" element={<Orders />} />
         </Routes>
       </div>
     </>
