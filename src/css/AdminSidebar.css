@@ -1,5 +1,10 @@
+.app-content{
+  display: flex;
+  align-items: flex-start;
+}
+
 .sidebar {
-  width: 18%;
+  width: 250px;
   min-height: 100vh;
   border: 1.5px solid #a9a9a9;
   border-top: 0;

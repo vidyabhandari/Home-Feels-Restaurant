@@ -11,6 +11,7 @@ import { StoreContext } from "../context/StoreContext";
 const Navbar = () => {
   const { token, setToken } = useContext(StoreContext);
   const [navActive, setNavActive] = useState(false);
+  const { getTotalCartAmount } = useContext(StoreContext);
   const navigate = useNavigate();
 
   const handleNavbar = () => {

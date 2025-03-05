@@ -46,7 +46,7 @@ const LoginContainer = () => {
     if (!validateForm()) return; // Stop submission if validation fails
 
     try {
-      if (email === "admin@gmail.com" && password === "admin") {
+      if (email === "admin@gmail.com" && password === "Admin@12") {
         localStorage.setItem("Admin", email);
         navigate("/admin-dashboard");
         alert("Admin Login Successful!");

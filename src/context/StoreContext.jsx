@@ -1,11 +1,11 @@
 import { createContext, useEffect, useState } from "react";
-import { food_list } from "../assets/assets.js";
+// import { food_list } from "../assets/assets.js";
 
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
-  // const [food_list, setFoodList] = useState([]);
+  const [food_list, setFoodList] = useState([]);
 
   const [token, setToken] = useState("");
 
