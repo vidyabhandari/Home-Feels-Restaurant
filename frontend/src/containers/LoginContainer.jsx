@@ -49,7 +49,7 @@ const LoginContainer = () => {
 
     // If it's the admin, redirect to the external admin panel
     if (email === "admin@gmail.com" && password === "Admin@123") {
-      window.location.href = `http://localhost:5173`;
+      window.location.href = `https://home-feels-restaurant-5s5o.vercel.app`;
       return; // Replace with your actual admin portal URL
     } else {
       const response = await axios.post(`${url}/api/user/login`, {
