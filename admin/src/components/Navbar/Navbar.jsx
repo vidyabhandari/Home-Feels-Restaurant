@@ -6,7 +6,7 @@ import logo from "../../assets/restaurant.png";
 const Navbar = () => {
   const handleLogout = () => {
     if (window.confirm("Are you sure you want to logout?")) {
-      window.location.href = "http://localhost:5174"; // Fixed URL
+      window.location.href = "https://home-feels-restaurant-mu.vercel.app"; // Fixed URL
     }
   };
 
