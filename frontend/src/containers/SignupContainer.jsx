@@ -42,7 +42,7 @@ const SignupContainer = () => {
     e.preventDefault();
     if (!validateForm()) return;
     const response = await axios.post(
-      "http://localhost:4000/api/user/register",
+      `${url}/api/user/register`,
       {
         name,
         email,

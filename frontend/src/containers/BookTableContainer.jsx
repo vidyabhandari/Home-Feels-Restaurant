@@ -21,7 +21,7 @@ const BookTableContainer = () => {
   const [selectedTable, setSelectedTable] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const { token } = useContext(StoreContext);
+  const { token, url } = useContext(StoreContext);
   const navigate = useNavigate(); //  Fixed navigation
 
   useEffect(() => {
@@ -98,7 +98,7 @@ const BookTableContainer = () => {
         handler: async function (paymentResponse) {
           try {
             const verifyResponse = await axios.post(
-              "http://localhost:4000/api/bookings/verify-payment",
+              `${url}/api/bookings/verify-payment`,
               {
                 razorpay_order_id: paymentResponse.razorpay_order_id,
                 razorpay_payment_id: paymentResponse.razorpay_payment_id,

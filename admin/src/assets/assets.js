@@ -12,4 +12,4 @@ export const assets = {
   upload_area,
 };
 
-export const url = "https://home-feels-restaurant-5.onrender.com";
+export const url = "https://home-feels-restaurant.onrender.com";

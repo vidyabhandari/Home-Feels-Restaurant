@@ -14,6 +14,7 @@ const LoginContainer = () => {
 
   const navigate = useNavigate();
   const { setToken, url, loadCartData } = useContext(StoreContext);
+  console.log(url)
 
   // Email validation regex
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -51,7 +52,7 @@ const LoginContainer = () => {
       window.location.href = `http://localhost:5173`;
       return; // Replace with your actual admin portal URL
     } else {
-      const response = await axios.post("http://localhost:4000/api/user/login", {
+      const response = await axios.post(`${url}/api/user/login`, {
         email,
         password,
       });
