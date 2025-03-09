@@ -1,4 +1,4 @@
-import BookingModel from "../models/BookingModel.js";
+import BookingModel from "../models/bookingModel.js";
 import Razorpay from "razorpay";
 import dotenv from "dotenv";
 import crypto from "crypto";
