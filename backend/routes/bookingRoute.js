@@ -6,7 +6,7 @@ import {
   userBookings,
   updateBookingStatus,
   verifyBooking,
-} from "../controllers/BookingController.js";
+} from "../controllers/bookingController.js";
 import authMiddleware from "../middleware/auth.js";
 
 const router = express.Router();
