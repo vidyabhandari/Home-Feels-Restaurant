@@ -1,0 +1,102 @@
+/* About Section Container */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* gap-10 */
+  align-items: center;
+}
+
+/* Image Container */
+.about-image-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1.5rem; /* rounded-3xl */
+  position: relative;
+}
+
+/* About Image */
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Phone Badge (commented out in original code)
+.phone-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 30;
+  background-color: black;
+  background-opacity: 0.5;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.phone-text {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+} */
+
+/* Content Section */
+.about-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* space-y-6 */
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Section Heading */
+.about-heading {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+  line-height: 1.2; /* leading-tight */
+}
+
+/* Paragraph Text */
+.about-paragraph {
+  color: #4B5563; /* text-gray-600 */
+}
+
+/* CTA Button */
+.about-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #16A34A; /* bg-green-600 */
+  color: white;
+  border-radius: 9999px; /* rounded-full */
+  transition: background-color 0.3s;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.about-button:hover {
+  background-color: #15803D; /* bg-green-700 */
+}
+
+@media (min-width: 768px) {
+  .about-heading {
+    font-size: 3rem; /* md:text-5xl */
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-container {
+    flex-direction: row;
+    gap: 3.5rem; /* lg:gap-14 */
+  }
+  
+  .about-image-container {
+    width: 50%; /* lg:w-1/2 */
+  }
+  
+  .about-content {
+    width: 50%; /* lg:w-1/2 */
+  }
+  
+  .about-heading {
+    font-size: 3.75rem; /* lg:text-6xl */
+  }
+}

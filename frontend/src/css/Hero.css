@@ -1,0 +1,131 @@
+/* Hero Container */
+.hero-container {
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* Hero Image */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  opacity: 0.4;
+  z-index: 10;
+}
+
+/* Content Container */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Hero Title */
+.hero-title {
+  color: white;
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+}
+
+/* Hero Description */
+.hero-description {
+  color: white;
+  font-size: 1.125rem; /* text-lg */
+}
+
+/* Buttons Container */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+/* Book Table Button */
+.book-table-button, .explore-menu-button {
+  border: none;
+  color: #747474;
+  font-weight: 500;
+  padding: 1vw 2.3vw;
+  background: white;
+  font-size: max(1vw,13px);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.book-table-button:hover {
+  background-color: #15803D; /* bg-green-700 */
+  color: white;
+}
+
+/* Explore Menu Button */
+/* .explore-menu-button {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid white;
+  color: white;
+  border-radius: 9999px;
+  transition: all 0.3s;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+} */
+
+.explore-menu-button:hover {
+  background-color: #16A34A; /* bg-green-600 */
+  color: white;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3rem; /* md:text-5xl */
+  }
+  
+  .hero-description {
+    font-size: 1.25rem; /* md:text-xl */
+  }
+  
+  .hero-buttons {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    max-width: 48rem; /* lg:max-w-3xl */
+  }
+  
+  .hero-title {
+    font-size: 3.75rem; /* lg:text-6xl */
+  }
+  
+  .hero-description {
+    font-size: 1.875rem; /* lg:text-3xl */
+  }
+}

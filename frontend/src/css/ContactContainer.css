@@ -1,0 +1,131 @@
+/* Contact Container CSS */
+.bg-light {
+  background-color: #F9F9F7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.text-center {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.intro-text {
+  max-width: 600px;
+  color: #4B5563;
+  margin: 1rem auto 0;
+}
+
+.form-container {
+  width: 90%;
+  max-width: 64rem;
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-family: 'DMSans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.form-input {
+  border-radius: 72px;
+  border: 1px solid #DBDFD0;
+  padding: 0.5rem 1rem;
+}
+
+.form-input:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: #10B981;
+}
+
+.form-textarea {
+  border-radius: 1rem;
+  border: 1px solid #DBDFD0;
+  padding: 0.5rem 1rem;
+}
+
+.form-textarea:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: #10B981;
+}
+
+.submit-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #16A34A;
+  color: white;
+  border-radius: 9999px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #15803D;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 90%;
+  max-width: 64rem;
+  padding: 0 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+  gap: 1.75rem;
+}
+
+.info-section {
+  margin-bottom: 1rem;
+}
+
+.info-title {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.info-text {
+  color: #4B5563;
+}
+
+/* Media Queries */
+@media (min-width: 1024px) {
+  .form-row {
+    flex-direction: row;
+  }
+  
+  .contact-info {
+    flex-direction: row;
+  }
+}

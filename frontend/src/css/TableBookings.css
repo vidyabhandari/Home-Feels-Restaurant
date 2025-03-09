@@ -1,0 +1,81 @@
+/* Table Booking Container */
+.table-booking-container {
+    padding: 20px;
+    width: 100%;
+}
+
+/* Title */
+.booking-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Booking List (Full Width) */
+.booking-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Booking Item */
+.booking-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.booking-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Booking Icon */
+.booking-icon {
+    width: 50px;
+    height: 50px;
+}
+
+/* Booking Details */
+.booking-details {
+    flex: 1;
+    padding: 0 15px;
+}
+
+/* Status Indicator */
+.status {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+
+/* Status Colors */
+.status.pending {
+    background: #ffcc00;
+    color: #fff;
+}
+
+.status.confirmed {
+    background: #28a745;
+    color: #fff;
+}
+
+.status.cancelled {
+    background: #dc3545;
+    color: #fff;
+}
+
+/* No Bookings */
+.no-bookings {
+    text-align: center;
+    color: #777;
+}

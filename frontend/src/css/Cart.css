@@ -1,0 +1,149 @@
+/* Cart Container */
+.cart-container {
+  border-top: 2px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-content {
+  margin-bottom: 40px;
+}
+
+.cart-header {
+  padding: 16px 0;
+}
+
+/* Cart Table Header */
+.cart-table-header {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 0.5fr;
+  padding: 10px;
+  background-color: #f3f4f6;
+  font-weight: 500;
+  border-bottom: 1px solid #e5e7eb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.header-title,
+.header-price,
+.header-quantity,
+.header-total,
+.header-remove {
+  text-align: center;
+}
+
+.header-title {
+  text-align: left;
+  padding-left: 16px;
+}
+
+/* Cart Item */
+.cart-item {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 0.5fr;
+  padding: 12px 0;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.item-title {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-left: 16px;
+}
+
+.item-image {
+  width: 80px;
+  height: auto;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-name {
+  font-weight: 400;
+}
+
+.size-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid #e5e7eb;
+  background-color: #f3f4f6;
+  font-size: 14px;
+}
+
+.item-price,
+.item-total {
+  text-align: center;
+  font-weight: 500;
+}
+
+.item-quantity {
+  display: flex;
+  justify-content: center;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+}
+
+.quantity-btn {
+  background: none;
+  border: none;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.quantity-btn:first-child {
+  border-right: 1px solid #e5e7eb;
+}
+
+.quantity-btn:last-child {
+  border-left: 1px solid #e5e7eb;
+}
+
+.quantity-value {
+  padding: 4px 16px;
+}
+
+.item-remove {
+  display: flex;
+  justify-content: center;
+}
+
+.remove-icon {
+  width: 24px;
+  cursor: pointer;
+}
+
+/* Empty Cart */
+.empty-cart {
+  height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.empty-cart-image {
+  max-width: 200px;
+}
+
+.empty-cart-title {
+  font-size: 48px;
+  text-align: center;
+}
+
+/* Cart Footer */
+.cart-footer {
+  display: flex;
+  justify-content: flex-end;
+}

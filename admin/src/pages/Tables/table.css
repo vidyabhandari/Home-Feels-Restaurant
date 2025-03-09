@@ -1,0 +1,85 @@
+/* Booking Wrapper */
+.booking-wrapper {
+  padding: 20px;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Header */
+.booking-header {
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Grid Layout */
+.booking-grid {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Booking Card */
+.booking-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Top Section */
+.booking-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.booking-icon {
+  width: 45px;
+  height: 45px;
+}
+
+/* Booking ID & Status */
+.booking-id {
+  font-size: 14px;
+  color: #666;
+}
+
+.booking-status {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff6b6b;
+}
+
+/* Booking Info */
+.booking-info {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.booking-info p {
+  margin: 5px 0;
+}
+
+/* Status Dropdown */
+.status-selector {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+  background: #fff;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+}
+
+.status-selector:hover {
+  border-color: #555;
+}
