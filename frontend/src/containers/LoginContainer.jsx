@@ -17,6 +17,7 @@ const LoginContainer = () => {
 
   // Email validation regex
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
   // Password validation regex
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
@@ -50,13 +51,10 @@ const LoginContainer = () => {
       window.location.href = `http://localhost:5173`;
       return; // Replace with your actual admin portal URL
     } else {
-      const response = await axios.post(
-        "http://localhost:4000/api/user/login",
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post("http://localhost:4000/api/user/login", {
+        email,
+        password,
+      });
 
       if (response.data && response.data.token) {
         localStorage.setItem("token", JSON.stringify(response.data.token));

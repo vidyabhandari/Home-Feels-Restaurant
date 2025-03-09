@@ -45,7 +45,7 @@ const BookTableContainer = () => {
     }
 
     try {
-      const response = await axios.get("http://localhost:4000/api/tables", {
+      const response = await axios.get(`${url}/api/tables`, {
         params: {
           date: formData.date,
           time: formData.time,
@@ -57,7 +57,7 @@ const BookTableContainer = () => {
         setAvailableTables(response.data.tables);
         setShowPopup(true);
       } else {
-        setError("No tables available for the selected time."); // ✅ Improved error handling
+        setError("No tables available for the selected time."); //
       }
     } catch (err) {
       setError("Something went wrong. Please try again.");
@@ -72,7 +72,7 @@ const BookTableContainer = () => {
       setError(null);
 
       const response = await axios.post(
-        "http://localhost:4000/api/bookings/book-table",
+        `${url}/api/bookings/book-table`,
         {
           date: formData.date,
           time: formData.time,

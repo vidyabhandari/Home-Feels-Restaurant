@@ -49,7 +49,7 @@ const Navbar = () => {
                 </li>
                 <hr />
                 <li onClick={() => navigate("/users-table")}>
-                  <img src={assets.table_icon} alt="" /> <p>Booked Tables</p>
+                  <p>Booked Tables</p>
                 </li>
                 <hr />
                 <li onClick={logout}>

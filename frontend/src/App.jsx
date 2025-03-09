@@ -16,6 +16,7 @@ import Footer from "./components/Footer";
 import PlaceOrderPage from "./pages/PlaceOrderPage";
 import OrderPage from "./pages/OrderPage";
 import VerifyPage from "./pages/VerifyPage";
+import TableBookingContainer from "./containers/TableBookingContainer";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/order" element={<PlaceOrderPage />} />
           <Route path="/myorders" element={<OrderPage />} />
           <Route path="/verify" element={<VerifyPage />} />
+          <Route path="/users-table" element={<TableBookingContainer />} />
         </Routes>
       </div>
       <Footer />
